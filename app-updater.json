@@ -1,0 +1,17 @@
+[
+  {
+    "version": "1.0.0+1",
+    "mandatory": false,
+    "beta": false,
+    "title": "Init version",
+    "message": {
+      "fr": "Correction de bugs et nouvelles fonctionnalités.",
+      "en": "New features and bug fixes."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/tag/1.0.0",
+      "linux": "https://github.com/mickbad/video-downloader/releases/tag/1.0.0",
+      "windows": "https://github.com/mickbad/video-downloader/releases/tag/1.0.0"
+    }
+  }
+]
