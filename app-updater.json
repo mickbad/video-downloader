@@ -12,7 +12,7 @@
       "en": "New features, bug fixes and new selector design."
     },
     "url": {
-      "macos": "https://github.com/mickbad/video-downloader/releases/tag/1.1.0,
+      "macos": "https://github.com/mickbad/video-downloader/releases/tag/1.1.0",
       "linux": "https://github.com/mickbad/video-downloader/releases/tag/1.1.0",
       "windows": "https://github.com/mickbad/video-downloader/releases/tag/1.1.0"
     }
