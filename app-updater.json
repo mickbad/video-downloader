@@ -1,4 +1,24 @@
 [
+
+  {
+    "version": "1.2.0+1",
+    "mandatory": false,
+    "beta": true,
+    "title": {
+      "fr": "Mise à jour de juillet 26",
+      "en": "Update July'26"
+    },
+    "message": {
+      "fr": "Correction de bugs, ajout d’une section de recherche de vidéos, conversion vidéo → audio et ajout de la langue anglaise.",
+      "en": "Bug fixes, added a video search section, video-to-audio conversion, and English language support."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/VideoDownloaderRicochets-macOS-1.2.0.dmg",
+      "linux": "",
+      "windows": ""
+    }
+  },
+  
   {
     "version": "1.1.0+1",
     "mandatory": false,
