@@ -13,9 +13,9 @@
       "en": "Bug fixes, added a video search section, video-to-audio conversion, and English language support."
     },
     "url": {
-      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/VideoDownloaderRicochets-macOS-1.2.0.dmg",
-      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/youtube_downloader-x86_64-1.2.0.AppImage",
-      "windows": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/VideoDownloaderRicochets-win64-1.2.0.exe"
+      "macos": "https://github.com/mickbad/video-downloader/releases/tag/1.2.0",
+      "linux": "https://github.com/mickbad/video-downloader/releases/tag/1.2.0",
+      "windows": "https://github.com/mickbad/video-downloader/releases/tag/1.2.0"
     }
   },
   
