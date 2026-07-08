@@ -3,7 +3,7 @@
   {
     "version": "1.2.0+1",
     "mandatory": false,
-    "beta": true,
+    "beta": false,
     "title": {
       "fr": "Mise à jour de juillet 26",
       "en": "Update July'26"
@@ -14,8 +14,8 @@
     },
     "url": {
       "macos": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/VideoDownloaderRicochets-macOS-1.2.0.dmg",
-      "linux": "",
-      "windows": ""
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/youtube_downloader-x86_64-1.2.0.AppImage",
+      "windows": "https://github.com/mickbad/video-downloader/releases/download/1.2.0/VideoDownloaderRicochets-win64-1.2.0.exe"
     }
   },
   
