@@ -2,7 +2,7 @@
   {
     "version": "1.3.0+1",
     "mandatory": false,
-    "beta": true,
+    "beta": false,
     "title": {
       "fr": "Mise à jour de juillet 26",
       "en": "Update July'26"
