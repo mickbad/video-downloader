@@ -1,5 +1,10 @@
 # video-downloader
-Simple video downloader
+
+Simple video downloader with yt-dlp support!
+
+Support indie dev here :)
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-☕-FFDD00?style=for-the-badge)](https://buymeacoffee.com/mickbad)
 
 Main window
 
