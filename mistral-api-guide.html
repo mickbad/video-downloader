@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Clé API Mistral AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #0a0e27;
+            color: #e0e6ff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none; /* Optionnel : enlève le soulignement */
+        }
+
+        a:hover {
+            color: #fff;
+            text-decoration: underline; /* Optionnel : souligne au survol */
+        }
+
+        a:visited {
+            color: #fff; /* Garde les liens visités en blanc */
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.08) 0%, transparent 70%);
+            bottom: -150px;
+            left: -150px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 700px;
+            animation: slideUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #00d4ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #a0a8cc;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #ff6b35 0%, #ff8555 100%);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .steps {
+            display: grid;
+            gap: 3rem;
+        }
+
+        .step {
+            background: rgba(26, 31, 58, 0.8);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out backwards;
+            transition: all 0.3s ease;
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
+        .step:nth-child(4) { animation-delay: 0.4s; }
+
+        .step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ff6b35 0%, #00d4ff 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: expandWidth 0.6s ease-out backwards;
+        }
+
+        .step:nth-child(1)::before { animation-delay: 0.5s; }
+        .step:nth-child(2)::before { animation-delay: 0.6s; }
+        .step:nth-child(3)::before { animation-delay: 0.7s; }
+        .step:nth-child(4)::before { animation-delay: 0.8s; }
+
+        .step:hover {
+            background: rgba(26, 31, 58, 1);
+            border-color: rgba(255, 107, 53, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b35 0%, #00d4ff 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #0a0e27;
+            flex-shrink: 0;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .step:nth-child(2) .step-number { animation-delay: 0.3s; }
+        .step:nth-child(3) .step-number { animation-delay: 0.6s; }
+        .step:nth-child(4) .step-number { animation-delay: 0.9s; }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #e0e6ff;
+        }
+
+        .step-content {
+            color: #a0a8cc;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-content p {
+            margin-bottom: 1rem;
+        }
+
+        .step-content ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .step-content li {
+            padding: 0.5rem 0 0.5rem 2rem;
+            position: relative;
+        }
+
+        .step-content li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 212, 255, 0.1) 100%);
+            border: 2px dashed rgba(255, 107, 53, 0.3);
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            color: #a0a8cc;
+            margin-top: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .code-block {
+            background: rgba(10, 14, 39, 0.8);
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            font-family: 'Monaco', monospace;
+            font-size: 0.9rem;
+            color: #00d4ff;
+            overflow-x: auto;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 31, 58, 0.5);
+            border-top: 1px solid rgba(255, 107, 53, 0.1);
+            padding: 2rem;
+            text-align: center;
+            color: #a0a8cc;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #ff6b35;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00d4ff;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(30px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes expandWidth {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(255, 107, 53, 0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .step {
+                padding: 2rem;
+            }
+
+            .step-header {
+                gap: 1rem;
+            }
+
+            .step-title {
+                font-size: 1.2rem;
+            }
+
+            .screenshot-placeholder {
+                padding: 2rem 1rem;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Obtenez votre Clé API Mistral AI</h1>
+            <p>Guidé étape par étape pour intégrer la puissance de Mistral AI dans votre application</p>
+            <button class="cta-button" onclick="document.querySelector('.steps').scrollIntoView({behavior: 'smooth'})">
+                Commencer
+            </button>
+        </div>
+    </section>
+
+    <!-- Steps Section -->
+    <div class="container">
+        <div class="steps">
+            <!-- Step 1 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <div class="step-title">Comprendre le rôle de la clé API</div>
+                </div>
+                <div class="step-content">
+                    <p>La clé API est votre <strong>identifiant sécurisé</strong> pour accéder aux services de Mistral AI.</p>
+                    <ul>
+                        <li>Authentification : Prouve que vous êtes autorisé à utiliser l'API</li>
+                        <li>Suivi : Mistral suit vos requêtes pour facturation et monitoring</li>
+                        <li>Sécurité : Permet le contrôle d'accès par application</li>
+                        <li>Isolation : Créez plusieurs clés pour différents projets</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>⚠️ Important :</strong> Gardez votre clé secrète. Ne la communiquez pas !</p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <div class="step-title">Créer un compte Mistral AI</div>
+                </div>
+                <div class="step-content">
+                    <p>Visitez le site officiel de Mistral AI pour créer votre compte.</p>
+                    <ul>
+                        <li>Accédez à <a href="https://console.mistral.ai" target="_blank"><strong>console.mistral.ai</strong></a></li>
+                        <li>Cliquez sur "Sign Up"</li>
+                        <li>Complétez vos informations (email, mot de passe)</li>
+                        <li>Confirmez votre adresse email via le lien envoyé</li>
+                        <li>Configurez votre profil et organisation</li>
+                    </ul>
+                </div>
+                <!--
+                <div class="screenshot-placeholder">
+                    🖼️ Screenshot : Page d'inscription de Mistral AI
+                </div>
+                -->
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <div class="step-title">Accéder à la console et aux clés API</div>
+                </div>
+                <div class="step-content">
+                    <p>Rendez-vous dans la section dédiée aux clés API de la console.</p>
+                    <ul>
+                        <li>Connectez-vous à <strong>https://console.mistral.ai</strong></li>
+                        <li>Dans le menu latéral, cherchez "API Keys" ou "Clés API"</li>
+                        <li>Vous verrez vos clés existantes et pourrez en créer de nouvelles</li>
+                        <li>Chaque clé affiche sa date de création et son dernier usage</li>
+                    </ul>
+                </div>
+                <!--
+                <div class="screenshot-placeholder">
+                    🖼️ Screenshot : Console Mistral AI - Section API Keys
+                </div>
+            -->
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <div class="step-title">Créer une nouvelle clé API</div>
+                </div>
+                <div class="step-content">
+                    <p>Générez une clé API dédiée à votre application.</p>
+                    <ul>
+                        <li>Cliquez sur le bouton "+ Create API Key"</li>
+                        <li>Donnez un nom descriptif (ex: "Mon App Production")</li>
+                        <li>Sélectionnez les permissions et le scope si disponible</li>
+                        <li>Confirmez la création</li>
+                        <li><strong>Copiez la clé immédiatement</strong> (elle ne sera plus visible après)</li>
+                    </ul>
+                    <!--
+                    <p style="margin-top: 1.5rem;"><strong>Usage recommandé :</strong></p>
+                -->
+                </div>
+                
+                <!--
+                <div class="code-block">
+import anthropic
+
+client = anthropic.Anthropic(
+    api_key="votre-clé-api-ici"
+)
+                </div>
+            -->
+                <p style="margin-top: 1.5rem; color: #ff6b35;"><strong>💡 Ensuite :</strong> Stockez votre clé dans un gestionnaire de secrets pour plus de sécurité et insérez la clef dans les "paramètres" de l'application.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        Créé par <a href="https://www.ricochets.dev" target="_blank">Ricochets Développement</a> • Guide d'intégration Mistral AI
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all steps
+        document.querySelectorAll('.step').forEach(step => {
+            observer.observe(step);
+        });
+
+        // Smooth scroll for CTA button (already handled by onclick, but enhance with JS)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
