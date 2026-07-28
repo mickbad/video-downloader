@@ -8,8 +8,8 @@
       "en": "Update late July'26"
     },
     "message": {
-      "fr": "Création de vidéos Karaoké. Correction de bugs.",
-      "en": "Create Karaoke videos. Bug fixes."
+      "fr": "Création de vidéos Karaoké depuis votre audio ou vidéo.\nCorrection de bugs.",
+      "en": "Create Karaoke videos from your video or audio file.\nBug fixes."
     },
     "url": {
       "macos": "https://github.com/mickbad/video-downloader/releases/download/1.3.1/VideoDownloaderRicochets-macOS-1.3.1.dmg",
