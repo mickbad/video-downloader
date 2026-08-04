@@ -1,5 +1,24 @@
 [
   {
+    "version": "1.3.2+1",
+    "mandatory": false,
+    "beta": false,
+    "title": {
+      "fr": "Mise à jour d'août 26",
+      "en": "Update August'26"
+    },
+    "message": {
+      "fr": "Aperçu des médias. Moteur de recherche dès l'acceuil. Amélioration du design",
+      "en": "Media preview. Search or enter web address in home page.\nDesign fixes."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.3.2/VideoDownloaderRicochets-macOS-1.3.2.dmg",
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.3.2/youtube_downloader-x86_64-1.3.2.AppImage",
+      "windows": "https://github.com/mickbad/video-downloader/releases/download/1.3.2/VideoDownloaderRicochets-win64-1.3.2.exe"
+    }
+  },
+  
+  {
     "version": "1.3.1+1",
     "mandatory": false,
     "beta": false,
