@@ -1,5 +1,24 @@
 [
   {
+    "version": "1.3.3+1",
+    "mandatory": false,
+    "beta": false,
+    "title": {
+      "fr": "Mise à jour d'août 26",
+      "en": "Update August'26"
+    },
+    "message": {
+      "fr": "Aperçu des médias. Moteur de recherche dès l'accueil. Playlist et Channels. Amélioration du design",
+      "en": "Media preview. Search or enter web address in home page.\nPlaylists - Channels - Design fixes."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.3.3/VideoDownloaderRicochets-macOS-1.3.3.dmg",
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.3.3/youtube_downloader-x86_64-1.3.3.AppImage",
+      "windows": "https://github.com/mickbad/video-downloader/releases/download/1.3.3/VideoDownloaderRicochets-win64-1.3.3.exe"
+    }
+  },
+    
+  {
     "version": "1.3.2+1",
     "mandatory": false,
     "beta": false,
