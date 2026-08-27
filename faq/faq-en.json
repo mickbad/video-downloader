@@ -1,0 +1,37 @@
+[
+  {
+    "question": "How do I download a video or just its audio?",
+    "answer": "To download media, you have two options. You can paste the address of the page where the video is available directly into the search box. The list of supported websites is available here: https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md. You can also search for a term in the search box. In this case, search results come from YouTube only. You can search by topic or by author (YouTube channel) by adding \"@\" before the name, for example \"@nowtech\". Once you have found the media, choose whether you want to download the video or only the audio. A dialog box then allows you to access the Downloads page and track the progress. When the download is complete, a sound may be played to notify you. This sound can be disabled in the application settings.",
+    "tags": ["download", "search", "audio"]
+  },
+  {
+    "question": "How do I download videos or music from a YouTube playlist?",
+    "answer": "If the address you searched for corresponds to a YouTube playlist, the application detects it automatically. A dedicated dialog box is then displayed, allowing you to choose exactly which media you want to download. For each item, you can choose to download the video or only the audio. You can download the entire playlist or select only specific items. This allows you to avoid downloading media you do not need.",
+    "tags": ["download", "playlist", "audio"]
+  },
+  {
+    "question": "Why does my search return no results even though YouTube finds videos in my browser?",
+    "answer": "In some cases, YouTube limits the results that can be accessed without being signed in. This can happen, for example, with certain sensitive content, content subject to restrictions, or content that requires a user account. The application may then receive no results, while your browser displays the videos correctly because you are already signed in. To solve this problem, open the application settings and select the browser you normally use for YouTube. The application can then use that browser's existing session, which includes the information indicating that you are already signed in to your account. In other words, the application asks YouTube for search results using your existing browser session instead of searching as an anonymous user. You therefore do not need to enter your password into the application.",
+    "tags": ["search", "browser", "account"]
+  },
+  {
+    "question": "How do I download a video from a website that requires an account?",
+    "answer": "Some websites only allow you to view a video after you have signed in to your account. In this case, the application can use your browser session. First, open the application settings and select the browser in which you are already signed in to the website concerned. Then open the website in that browser and sign in normally if necessary. Copy the address of the page containing the video and paste it into the application to start the download. This method allows the application to use the connection that is already established in your browser, without asking you to provide your password to the application.",
+    "tags": ["download", "browser", "account"]
+  },
+  {
+    "question": "How can I prevent track numbers from being added to playlist file names?",
+    "answer": "The application can automatically add the number of each track at the beginning of the file name. This is useful for keeping the tracks in the same order as the playlist. If you do not want the track number, open the application settings and go to the \"Storage\" section. You will find a switch that allows you to enable or disable the addition of the track number to file names. Simply turn this option off so that future downloaded files no longer include the track number in their names.",
+    "tags": ["playlist", "storage", "download"]
+  },
+  {
+    "question": "How do I create a karaoke video from a song?",
+    "answer": "To create a karaoke video, the application needs a transcription of the lyrics. This transcription is created using Mistral AI. You therefore need a Mistral AI account and an API key. If you do not know how to obtain this key, help is available directly from the application settings through a clickable link. Once you have entered the key in the application, open the tools for the media you want to use and select \"Create a karaoke video\". Then select the language of the lyrics and start the transcription. Take the time to check and correct the transcription if necessary, then choose the final generation settings. When you send the creation to the server, a new entry appears in the Local Library. This entry represents the media being generated and allows you to find the result once processing is complete.",
+    "tags": ["karaoke", "transcription", "library"]
+  },
+  {
+    "question": "What is the difference between the Downloads page and the Local Library?",
+    "answer": "These two sections have different purposes. The \"Downloads\" page contains the downloads you have made from the search engine or by directly entering a video address. The \"Local Library\", on the other hand, contains media loaded from your computer's local storage. All files used by the application, including the library files, are stored in a dedicated application directory. You can choose the location of this directory in the application settings. In the Local Library, you can delete an entry and the corresponding file from local storage. Be careful: on the Downloads page, the \"Clear list\" action does not delete the downloaded files. It only removes the entries displayed in the list. The files therefore remain on your computer. Each media item also has an audio preview available at the beginning of its row. Clicking on the row opens the media using the tools available on your computer.",
+    "tags": ["library", "download", "storage"]
+  }
+]

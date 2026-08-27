@@ -1,0 +1,37 @@
+[
+  {
+    "question": "Comment télécharger une vidéo ou seulement sa bande audio ?",
+    "answer": "Pour télécharger un média, vous avez deux possibilités. Vous pouvez coller directement l'adresse de la page où la vidéo est diffusée dans la zone de recherche. La liste des sites compatibles est disponible ici : https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md. Vous pouvez également rechercher un terme dans la zone de recherche. Dans ce cas, les résultats de recherche proviennent uniquement de YouTube. Vous pouvez rechercher un thème ou un auteur (chaîne YouTube) en ajoutant « @ » devant son nom, par exemple « @nowtech ». Une fois le média trouvé, choisissez si vous souhaitez télécharger la vidéo ou uniquement l'audio. Une boîte de dialogue vous permet ensuite d'accéder à la page des téléchargements pour suivre l'avancement. Lorsque le téléchargement est terminé, un son peut être joué pour vous prévenir. Ce son peut être désactivé dans les paramètres de l'application.",
+    "tags": ["téléchargement", "recherche", "audio"]
+  },
+  {
+    "question": "Comment télécharger des vidéos ou des musiques à partir d'une playlist YouTube ?",
+    "answer": "Si l'adresse que vous avez recherchée correspond à une playlist YouTube, l'application la détecte automatiquement. Une boîte de dialogue spécifique s'affiche alors et vous permet de choisir précisément les médias à télécharger. Pour chaque élément, vous pouvez choisir le téléchargement en vidéo ou uniquement en audio. Vous pouvez télécharger toute la playlist ou sélectionner seulement certains éléments. Cela vous évite de télécharger les médias dont vous n'avez pas besoin.",
+    "tags": ["téléchargement", "playlist", "audio"]
+  },
+  {
+    "question": "Pourquoi ma recherche ne retourne aucun résultat alors que YouTube trouve bien des vidéos dans mon navigateur ?",
+    "answer": "Dans certains cas, YouTube limite les résultats accessibles sans être connecté, notamment pour certains contenus considérés comme sensibles, réservés à certains utilisateurs ou soumis à des restrictions. L'application peut alors ne recevoir aucun résultat, alors que votre navigateur, lui, affiche correctement les vidéos parce que vous y êtes connecté. Pour résoudre ce problème, ouvrez les paramètres de l'application et choisissez le navigateur que vous utilisez habituellement pour YouTube. L'application pourra alors utiliser la session de ce navigateur, c'est-à-dire les informations qui indiquent que vous êtes déjà connecté à votre compte. Concrètement, l'application demande les résultats à YouTube en utilisant la session existante de votre navigateur au lieu de faire la recherche comme un utilisateur non connecté. Vous n'avez donc pas besoin de saisir votre mot de passe dans l'application.",
+    "tags": ["recherche", "navigateur", "compte"]
+  },
+  {
+    "question": "Comment télécharger une vidéo provenant d'un site qui demande de se connecter à un compte ?",
+    "answer": "Certains sites ne permettent de voir une vidéo qu'après vous être connecté à votre compte. Dans ce cas, l'application peut utiliser la session de votre navigateur. Commencez par ouvrir les paramètres de l'application et sélectionnez le navigateur dans lequel vous êtes déjà connecté au site concerné. Ouvrez ensuite le site avec ce navigateur, connectez-vous normalement si nécessaire, puis copiez l'adresse de la page contenant la vidéo. Collez cette adresse dans l'application pour lancer le téléchargement. L'intérêt de cette méthode est que l'application peut utiliser la connexion déjà établie dans votre navigateur, sans vous demander de communiquer votre mot de passe à l'application.",
+    "tags": ["téléchargement", "navigateur", "compte"]
+  },
+  {
+    "question": "Comment éviter que le numéro des pistes soit ajouté aux noms des fichiers d'une playlist ?",
+    "answer": "L'application peut ajouter automatiquement le numéro de chaque piste au début du nom du fichier, ce qui est pratique pour conserver l'ordre d'une playlist. Si vous ne souhaitez pas ce numéro, ouvrez les paramètres de l'application puis rendez-vous dans la section « Stockage ». Vous y trouverez un interrupteur permettant d'activer ou de désactiver l'ajout du numéro de piste dans le nom des fichiers. Désactivez simplement cette option pour que les prochains fichiers téléchargés n'utilisent plus le numéro de piste dans leur nom.",
+    "tags": ["playlist", "stockage", "téléchargement"]
+  },
+  {
+    "question": "Comment créer une vidéo karaoké à partir d'une musique ?",
+    "answer": "Pour créer une vidéo karaoké, l'application a besoin d'une transcription des paroles. Cette transcription est réalisée à l'aide de Mistral AI. Vous devez donc disposer d'un compte Mistral AI et récupérer une clé API. Si vous ne savez pas comment obtenir cette clé, une aide est directement accessible depuis les paramètres de l'application grâce à un lien cliquable. Une fois la clé saisie dans l'application, ouvrez les outils du média à partir duquel vous souhaitez créer le karaoké et choisissez « Créer une vidéo karaoké ». Sélectionnez ensuite la langue des paroles et lancez la transcription. Prenez le temps de vérifier et de corriger la transcription si nécessaire, puis choisissez les derniers paramètres de génération. Lorsque vous envoyez la création au serveur, une nouvelle entrée apparaît dans la bibliothèque locale. Elle correspond au média en cours de génération et vous permet de retrouver le résultat une fois le traitement terminé.",
+    "tags": ["karaoké", "transcription", "bibliothèque"]
+  },
+  {
+    "question": "Quelle est la différence entre la page des téléchargements et la bibliothèque locale ?",
+    "answer": "Ces deux espaces n'ont pas le même rôle. La page « Téléchargements » regroupe les téléchargements que vous avez effectués depuis le moteur de recherche ou en saisissant directement l'adresse d'une vidéo. La « Bibliothèque locale », elle, correspond aux médias chargés depuis le disque de votre ordinateur. Tous les fichiers utilisés par l'application, y compris ceux de la bibliothèque, sont enregistrés dans un répertoire spécifique. Vous pouvez choisir l'emplacement de ce répertoire dans les paramètres de l'application. Dans la bibliothèque locale, vous pouvez supprimer une entrée et le fichier correspondant du répertoire local. Attention : dans la page « Téléchargements », l'action « Nettoyer la liste » ne supprime pas les fichiers téléchargés. Elle supprime uniquement les entrées affichées dans la liste. Les fichiers restent donc présents sur votre ordinateur. Pour chaque média, vous pouvez également utiliser l'aperçu audio situé en début de ligne. Un clic sur la ligne permet d'ouvrir le média avec les outils disponibles sur votre ordinateur.",
+    "tags": ["bibliothèque", "téléchargement", "stockage"]
+  }
+]
