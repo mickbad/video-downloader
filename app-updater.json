@@ -1,5 +1,24 @@
 [
   {
+    "version": "1.4.0+1",
+    "mandatory": false,
+    "beta": false,
+    "title": {
+      "fr": "Mise à jour fin été 26",
+      "en": "Update summer 26"
+    },
+    "message": {
+      "fr": "Ajout d'une page FAQ. Amélioration du design",
+      "en": "Add FAQ page - Design fixes."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.4.0/VideoDownloaderRicochets-macOS-1.4.0.dmg",
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.4.0/youtube_downloader-x86_64-1.4.0.AppImage",
+      "windows": "https://github.com/mickbad/video-downloader/releases/download/1.4.0/VideoDownloaderRicochets-win64-1.4.0.exe"
+    }
+  },
+    
+  {
     "version": "1.3.3+1",
     "mandatory": false,
     "beta": false,
