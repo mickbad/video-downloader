@@ -1,5 +1,22 @@
 [
   {
+    "version": "1.4.5+1",
+    "mandatory": false,
+    "beta": false,
+    "title": {
+      "fr": "Mise à jour automne 26",
+      "en": "Update autumn 26"
+    },
+    "message": {
+      "fr": "Audio séparé en 2, 4 ou 6 intruments\nChangement du pitch et du tempo\nDesign fixes",
+      "en": "Separation audio file to 2, 4 or 6 stems\nPitch and Tempo management\nDesign fixes."
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.4.0/VideoDownloaderRicochets-macOS-1.4.5.dmg"      
+    }
+  },
+    
+  {
     "version": "1.4.0+1",
     "mandatory": false,
     "beta": false,
