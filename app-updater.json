@@ -12,7 +12,8 @@
       "en": "Separation audio file to 2, 4 or 6 stems\nPitch and Tempo management\nDesign fixes."
     },
     "url": {
-      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.4.5/VideoDownloaderRicochets-macOS-1.4.5.dmg"      
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.4.5/VideoDownloaderRicochets-macOS-1.4.5.dmg",
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.4.5/youtube_downloader-x86_64-1.4.5.AppImage"
     }
   },
     
