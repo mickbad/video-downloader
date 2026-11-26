@@ -1,5 +1,23 @@
 [
   {
+    "version": "1.4.6+1",
+    "mandatory": false,
+    "beta": false,
+    "title": {
+      "fr": "Mise à jour automne 26",
+      "en": "Update autumn 26"
+    },
+    "message": {
+      "fr": "Changement de design pour les outils des audios et vidéos",
+      "en": "New design for audio/video tools"
+    },
+    "url": {
+      "macos": "https://github.com/mickbad/video-downloader/releases/download/1.4.6/VideoDownloaderRicochets-macOS-1.4.6.dmg",
+      "linux": "https://github.com/mickbad/video-downloader/releases/download/1.4.6/youtube_downloader-x86_64-1.4.6.AppImage"
+    }
+  },
+    
+  {
     "version": "1.4.5+1",
     "mandatory": false,
     "beta": false,
